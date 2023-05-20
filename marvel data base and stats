@@ -41,9 +41,20 @@ INSERT INTO marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "
 INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
 SELECT * FROM marvels;
 
+- what is the maximum height?
 SELECT MAX(height_m) FROM marvels;
+
+-what is the minimum height?
 SELECT MIN(intelligence) FROM marvels;
+
+-what is the average height?
 SELECT avg(speed) FROM marvels;
+
+-show the alignment and the name and group them by their hometown if their height is greater than 1.8.
 SELECT alignment, name FROM marvels GROUP BY hometown HAVING height_m > 1.8;
+
+-create a "type" column and display the name in 2 categories (weak and strong).
 SELECT name, CASE WHEN fighting_skills > 5 THEN "weak" ELSE "strong" END "type" FROM marvels;
+
+-show the ID for marvels from the USA with a populatiry greater than 50.
 SELECT ID FROM marvels WHERE hometown = "USA" AND "populatiry" > 50;
